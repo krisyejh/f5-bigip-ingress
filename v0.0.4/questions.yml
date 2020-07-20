@@ -5,7 +5,7 @@ labels:
   io.cattle.role: project
   io.rancher.certified: partner
 questions:
-- variable: ingress.annotations.virtual-server[0].f5\.com/ip
+- variable: ingress.annotations.virtual-server[0]f5\.com/ip
   default: "controller-default"
   required: true
   description: "Provide F5 Virtual Server IP for Load Balancing"
