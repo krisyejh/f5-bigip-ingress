@@ -5,34 +5,34 @@ labels:
   io.cattle.role: project
   io.rancher.certified: partner
 questions:
-- variable: ingress.annotations.virtual-server\.f5\.com/ip
+- variable: ingress.annotations.virtual-server[0]\.f5\.com/ip
   default: "controller-default"
   required: true
   description: "Provide F5 Virtual Server IP for Load Balancing"
   type: string
   label: F5 Virual Server IP
   group: "F5 Virtual Server"
-- variable: ingress.annotations.virtual-server\.f5\.com/http-port
+- variable: ingress.annotations.virtual-server[1]\.f5\.com/http-port
   default: "80"
   required: true
   description: "Provide F5 Virtual Server HTTP Port for Load Balancing"
   type: string
   label: F5 Virual Server HTTP Port
   group: "F5 Virtual Server"
-- variable: ingress.annotations.virtual-server\.f5\.com/partition
+- variable: ingress.annotations.virtual-server[2]\.f5\.com/partition
   default: "k8s-partition"
   required: true
   description: "Provide F5 Partition for the Kubernetes Cluster"
   type: string
   label: F5 Partition for Kubernetes
   group: "F5 Virtual Server"
-- variable: ingress.annotations.virtual-server\.f5\.com/health
+- variable: ingress.annotations.virtual-server[3]\.f5\.com/health
   default: ""
   description: "Provide F5 VS Health Check for Pool"
   type: string
   label: F5 Virual Server Health
   group: "F5 Virtual Server"
-- variable: ingress.annotations.virtual-server\.f5\.com/balance
+- variable: ingress.annotations.virtual-server[4]\.f5\.com/balance
   default: "round-robin"
   description: "F5 Virtual Server Balance Type"
   type: enum
@@ -43,20 +43,6 @@ questions:
   - "round-robin"
   - "least-connections-node"
   - "fastest-node"
-
-- variable: spec.rules.host
-  default: "web.ranher.com"
-  required: true
-  description: "Provide Ingress Host Domain Name"
-  type: string
-  label: Config Ingress Host
-  group: "Ingress Basic Config"
-- variable: spec.rules.http.paths.path
-  default: "/web"
-  description: "Provide Ingress Path"
-  type: string
-  label: Config Ingress Path
-  group: "Ingress Basic Config"
 
 - variable: spec.backend.serviceName
   default: "your-service-name"
@@ -72,4 +58,20 @@ questions:
   type: string
   label: Ingress Backend Service Port
   group: "Ingress Basic Config"
+
+
+- variable: spec.rules.host
+  default: "web.rancher.com"
+  required: true
+  description: "Provide Ingress Host Domain Name"
+  type: string
+  label: Config Ingress Host
+  group: "Ingress Basic Config"
+- variable: spec.rules.http.paths.path
+  default: "/web"
+  description: "Provide Ingress Path"
+  type: string
+  label: Config Ingress Path
+  group: "Ingress Basic Config"
+
 
