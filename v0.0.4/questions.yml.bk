@@ -12,6 +12,37 @@ questions:
   type: string
   label: F5 Virual Server IP
   group: "F5 Virtual Server"
+- variable: ingress.annotations.virtual-server[1].f5\.com/http-port
+  default: "80"
+  required: true
+  description: "Provide F5 Virtual Server HTTP Port for Load Balancing"
+  type: string
+  label: F5 Virual Server HTTP Port
+  group: "F5 Virtual Server"
+- variable: ingress.annotations.virtual-server[2].f5\.com/partition
+  default: "k8s-partition"
+  required: true
+  description: "Provide F5 Partition for the Kubernetes Cluster"
+  type: string
+  label: F5 Partition for Kubernetes
+  group: "F5 Virtual Server"
+- variable: ingress.annotations.virtual-server[3].f5\.com/health
+  default: ""
+  description: "Provide F5 VS Health Check for Pool"
+  type: string
+  label: F5 Virual Server Health
+  group: "F5 Virtual Server"
+- variable: ingress.annotations.virtual-server[4].f5\.com/balance
+  default: "round-robin"
+  description: "F5 Virtual Server Balance Type"
+  type: enum
+  required: true
+  label: F5 VS Balance
+  group: "F5 Virtual Server"
+  options:
+  - "round-robin"
+  - "least-connections-node"
+  - "fastest-node"
 
 - variable: spec.backend.serviceName
   default: "your-service-name"
