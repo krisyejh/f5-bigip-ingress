@@ -13,14 +13,14 @@ questions:
   label: F5 Virual Server IP
   group: "F5 Virtual Server"
 
-- variable: spec.backend.serviceName
+- variable: spec.rules.http.paths.backend.serviceName
   default: "your-service-name"
   description: "Provide Ingress Service Name to be Proxied and Loadbalanced"
   type: string
   required: true
   label: Ingress Backend Service
   group: "Ingress Basic Config"
-- variable: spec.backend.servicePort
+- variable: spec.rules.http.paths.backend.serviceName
   default: "80"
   required: true
   description: "Provide Ingress Service Port to be Accessed"
@@ -42,5 +42,4 @@ questions:
   type: string
   label: Config Ingress Path
   group: "Ingress Basic Config"
-
 
