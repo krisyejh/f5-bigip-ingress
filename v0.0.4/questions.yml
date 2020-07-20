@@ -20,7 +20,7 @@ questions:
   required: true
   label: Ingress Backend Service
   group: "Ingress Basic Config"
-- variable: spec.rules.http.paths.backend.serviceName
+- variable: spec.rules.http.paths.backend.servicePort
   default: "80"
   required: true
   description: "Provide Ingress Service Port to be Accessed"
