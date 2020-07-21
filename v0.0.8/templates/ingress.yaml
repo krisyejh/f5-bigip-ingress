@@ -22,7 +22,7 @@ metadata:
     virtual-server.f5.com/http-port: "{{ $vsPort }}"
     virtual-server.f5.com/partition: "{{ $vsPartition }}"
     virtual-server.f5.com/balance: "{{ $vsBalance }}"
-    virtual-server.f5.com/health: "{{ $vsHealth | quote }}"
+    virtual-server.f5.com/health: "{{ $vsHealth }}"
 spec:
   {{- if .Values.ingress.tls }}
   tls:
