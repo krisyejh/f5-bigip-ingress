@@ -44,7 +44,7 @@ questions:
   - "least-connections-node"
   - "fastest-node"
 - variable: ingress.hosts.host
-  default: "web.ranher.com"
+  default: "web.rancher.com"
   required: true
   description: "Provide Ingress Host Domain Name"
   type: string
