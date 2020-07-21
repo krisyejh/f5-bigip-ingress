@@ -29,7 +29,7 @@ questions:
 - variable: ingress.annotations.health
   default: ""
   description: "Provide F5 VS Health check for Pool"
-  type: multiline
+  type: string
   label: Config F5 Virual Server Health
   group: "F5 Virtual Server"
 - variable: ingress.annotations.balance
