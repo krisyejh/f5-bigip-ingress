@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: "1.5"
 description: A Helm chart for Kubernetes
 name: f5-cis-ingress
-version: 0.0.5
+version: 0.0.6
 
 home: https://clouddocs.f5.com/
 icon: file://../f5.logo.png
