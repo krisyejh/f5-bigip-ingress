@@ -1,0 +1,16 @@
+ingressnameOverride: ingress-f5-chart-test51
+
+service:
+  serviceName: nginx-rancher-opa
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    virtualserverip: 172.16.1.120
+    virtualserverhttpport: "81"
+    partition: k8s
+    balance: round-robin
+  hosts:
+      host: f5-ingress-example-51.test
+      path: /web5
