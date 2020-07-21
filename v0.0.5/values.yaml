@@ -1,0 +1,56 @@
+# Default values for f5cisingressv2.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+#replicaCount: 1
+
+#image:
+#  repository: nginx
+#  tag: stable
+#  pullPolicy: IfNotPresent
+
+#imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+ingressnameOverride: ""
+
+service:
+  type: ClusterIP
+  serviceName: nginx
+  port: 80
+
+ingress:
+  enabled: true
+  tlsenabled: false
+  annotations: 
+    virtualserverip: 172.16.1.100
+    virtualserverhttpport: 80
+    partition: k8s
+    balance: round-robin
+    health: ""
+  hosts:
+    host: chart-example.local
+    path: /web
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+#resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+#nodeSelector: {}
+
+#tolerations: []
+
+#affinity: {}

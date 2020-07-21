@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: "1.5"
+description: A Helm chart for Kubernetes
+name: f5cisingressv2
+version: 0.5.0
+
+home: https://clouddocs.f5.com/
+icon: file://../f5.logo.png
+keywords:
+- f5
+- ingress
+- cis
+- rancher
+
+maintainers:
+- email: jianhong@rancher.com
+  name: KrisYe
