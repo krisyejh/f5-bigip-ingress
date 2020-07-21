@@ -65,7 +65,7 @@ questions:
 - variable: ingress.tls.secretName
   default: ""
   description: "Provide Ingress Secret Name to Configure With"
-  type: secret
+  type: certificate
   label: Config Ingress SSL Secret
   show_if: "ingress.tlsenabled=true"
   group: "Ingress Basic Config"
